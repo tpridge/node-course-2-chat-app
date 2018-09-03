@@ -65,10 +65,18 @@ describe('Users', () => {
 	});	
 
 	it ('should find a user', () => {
+		var user = users.getUser('2');
 
+		expect(user).toInclude({
+				id: '2',
+				name: 'Jen',
+				room: 'React Course'
+			});
 	});
 
-	it ('should not fina a user', () => {
+	it ('should not find a user', () => {
+		var user = users.getUser('7');
 
+		expect(user).toEqual(null);
 	});
 });
